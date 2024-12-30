@@ -2,18 +2,19 @@ const nodemailer = require('nodemailer');
 
 const sendEmail = async (options) => {
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'sandbox.smtp.mailtrap.io', // Use Mailtrap's SMTP host
+        port: 587, // Typically use 587 for secure connections
         auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
+            user: process.env.MAILTRAP_USER, // Mailtrap username from your Mailtrap account
+            pass: process.env.MAILTRAP_PASS, // Mailtrap password from your Mailtrap account
         },
     });
 
     const mailOptions = {
-        from: `"Support Team" <${process.env.EMAIL_USER}>`,
-        to: options.email,
-        subject: options.subject,
-        text: options.message,
+        from: `"Support Team" <support@example.com>`, // Can use a generic or domain-specific sender
+        to: options.email, // Recipient's email
+        subject: options.subject, // Email subject
+        text: options.message, // Email message
     };
 
     await transporter.sendMail(mailOptions);
