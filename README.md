@@ -1,7 +1,3 @@
-
-
-[CursorSurroundingLines]
-[README.md]
 # User Authentication System
 
 A comprehensive user authentication system built with Node.js, Express, and MongoDB.
@@ -122,6 +118,3 @@ Contributions are welcome! Please submit a pull request with a detailed descript
 ## License
 
 This project is licensed under the MIT License.
-
-[EndOfDocument README.md]
-[/CursorSurroundingLines]
